@@ -1,0 +1,7 @@
+{
+  "name": "clox",
+  "version": "1.9.0",
+  "dependencies": [
+    "curl", "libuv"
+  ]
+}

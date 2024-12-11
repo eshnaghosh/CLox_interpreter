@@ -1,0 +1,36 @@
+namespace test.lang;
+
+fun outer() {
+  var x = "value";
+  fun middle() {
+    fun inner() {
+      println(x);
+    }
+
+    println("create inner closure");
+    return inner;
+  }
+
+  println("return from outer");
+  return middle;
+}
+
+var mid = outer();
+var in = mid();
+in();
+
+print("Class of function 'in()' is: ");
+println(in.getClassName());
+print("Name of function 'in()' is: ");
+println(in.name());
+print("function 'in()' is anonymous: ");
+println(in.isAnonymous());
+print("function 'in()' is native: ");
+println(in.isNative());
+
+var time = clock;
+println("Assinging variable 'time' as native function 'clock'...");
+print("Class of function 'time()' is: ");
+println(time.getClassName());
+print("function 'time()' is native: ");
+println(time.isNative());
